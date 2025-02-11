@@ -9,12 +9,11 @@
 2. [Prerequisites](#prerequisites)
 3. [Setup and installation](#setup-and-installation)
 4. [ERC20 Token Implementation](#erc20-token-implementation)
-5. [Deployment](#deployment)
-6. [FrontEnd](#frontend)
-7. [Conclusion](#conclusion)
-8. [Files](#files)
-9. [License](#license)
-10. [References](#references)
+5. [Marketplace Website](#marketplace-website)
+6. [Conclusion](#conclusion)
+7. [Files](#files)
+8. [License](#license)
+9. [References](#references)
 
 ## Overview
 - <b><i>Goal</i>:</b> to create a decentralized application that allows users to list, purchase, and rate AI models with UI/UI design
@@ -120,6 +119,10 @@ transfer("receiver_address", amount)
 - **Last Transaction Timestamp:** `getLastTransactionTimestamp()`
 - **Last Sender Address:** `getLastSender()`
 - **Last Receiver Address:** `getLastReceiver()`
+
+## Marketplace Website
+![Описание изображения](screens/1.jpg)
+![Описание изображения](screens/2.jpg)
 
 ## License
 MIT License
