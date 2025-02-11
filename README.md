@@ -59,8 +59,6 @@ This marketplace demonstrates the potential of **blockchain in AI model trading*
 
 ---
 
-This conclusion summarizes the project's goals, achievements, and possible improvements. Let me know if you’d like it tweaked! 😊
-
 ## License
 MIT License
 
