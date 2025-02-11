@@ -5,125 +5,45 @@
 - Ulzhan Tamyzgazina SE-2325
 
 ## Contents
-1. [Overview](#overview)  
-2. [Prerequisites](#prerequisites)
-3. [Setup and installation](#setup-and-installation)
-4. [ERC20 Token Implementation](#erc20-token-implementation)
-5. [Marketplace Website](#marketplace-website)
+1. [Overview](#overview)
+2. [Usage](#usage)
+3. [Marketplace Website](#marketplace-website)
 6. [Conclusion](#conclusion)
 7. [Files](#files)
 8. [License](#license)
 9. [References](#references)
 
 ## Overview
-- <b><i>Goal</i>:</b> to create a decentralized application that allows users to list, purchase, and rate AI models with UI/UI design
-- <b><i>Tasks</i></b>:
-1. **Smart Contract Development**  
-   - Implement functions for listing, purchasing, and rating AI models.  
-   - Add functionality for creators to withdraw funds and retrieve model details.  
-
-2. **Blockchain Environment Setup**  
-   - Configure `web3.js` and connect it to Ganache or a testnet like Goerli.  
-   - Link Metamask to the blockchain network.  
-
-3. **Contract Deployment**  
-   - Compile and deploy the smart contract using Truffle or Hardhat.  
-
-4. **Frontend Development**  
-   - Create forms for listing models and rating purchased models.  
-   - Add buttons for purchasing models, viewing details, and withdrawing funds.  
-   - Display available models in a list or grid format.  
-
-5. **Testing**  
-   - Test contract functions with tools like Truffle Console or Remix.  
-   - Validate frontend integration in a local blockchain environment.  
-
-6. **Project Finalization**  
-   - Deploy the application to a public testnet.  
-   - Host the frontend on a platform like GitHub Pages or Vercel.  
-   - Include detailed instructions in the README file.  
+This project is a decentralized marketplace where users can buy and sell AI models using an ERC-20 token. It integrates smart contracts, wallet authentication, and a seamless purchase flow. 
 
 
-## Prerequisites
+## **Usage**
 
-1. **Node.js** (version 14.x or later) - [Install Node.js](https://nodejs.org/)
-2. **Ganache** - [Download Ganache](https://www.trufflesuite.com/ganache)
-3. **MetaMask** browser extension - [Install MetaMask](https://metamask.io/)
-4. **VS Code** - [Download VS Code](https://code.visualstudio.com/)
+### **1. Connect Wallet**
+- Click the **"Connect Wallet"** button to link your **Metamask** account.
 
-## Setup and installation 
+### **2. Check Token Balance**
+- Your **ERC-20 token balance** is displayed on the UI.  
+- Click **"Refresh Balance"** to update it.
 
-### 1. Clone the repository:
+### **3. List AI Models**
+Sellers can create new AI model listings by providing:
+- **Model Name**
+- **Description**
+- **Price (in ERC-20 tokens)**
+- **Upload Model File** (stored securely on **IPFS/Arweave**)
 
-```bash
-git clone https://github.com/kozqarashigi/BT_assignment2
-cd BT_assignment2
-```
-### 2. Install dependencies:
-
-```bash
-npm install
-```
-### 3. Set up Ganache:
-- Open Ganache and create a new workspace.
-- Note the RPC server URL (usually http://127.0.0.1:7545).
-- Ensure you have at least two account with Ether (Ganache provides some pre-funded accounts).
-
-### 4. Set up MetaMask:
-- Open MetaMask and create a two wallets if you haven't already.
-- Connect MetaMask to your local Ganache network using the RPC URL from Ganache (http://127.0.0.1:7545).
-= Import one of the Ganache accounts into MetaMask using the private key provided by Ganache.
-
-
-### 5. Deploy the Contract:
-```bash
-node server.js
-```
-
-## ERC20 Token Implementation
-
-### **1. Smart Contract Code**
-
-Create a file **`MyToken.sol`** in Remix and creating a smart contract.
-
-### **2. Compile the Contract**
-
-- Open **Remix IDE** → Select Solidity version **0.8.20**.
-- Click **Compile MyToken.sol**.
-
-### **3. Deploy the Contract**
-
-- Go to **Deploy & Run Transactions**.
-- Select **Injected Provider - MetaMask** (for Sepolia) or **Ganache Provider**.
-- Click **Deploy** and confirm the transaction in MetaMask.
-
-
-### **4. Interacting with the Contract**
-
-After deploying, use Remix to interact with the contract:
-
-#### **Check Token Balance**
-
-```solidity
-balanceOf("your_address")
-```
-
-#### **Transfer Tokens**
-
-```solidity
-transfer("receiver_address", amount)
-```
-
-#### **Retrieve Transaction Details**
-
-- **Last Transaction Timestamp:** `getLastTransactionTimestamp()`
-- **Last Sender Address:** `getLastSender()`
-- **Last Receiver Address:** `getLastReceiver()`
+### **4. Buy AI Models**
+- Browse available AI models.
+- Click **"Buy"** to initiate a transaction.
+- The specified **ERC-20 token amount** is transferred to the seller.
+- The marketplace updates automatically after a successful purchase.
 
 ## Marketplace Website
 ![Описание изображения](screens/1.jpg)
+Here you can see the Welcome page for our Marketplace, where you can login with your Metamask account as an user and also as an admin. When it's successfully connected you will see the dialog page which will redirect you to your marketplace.
 ![Описание изображения](screens/2.jpg)
-
+In More Details page you can see the more detailed information (name, description, price,rating, file) about your AI Models.
 ## License
 MIT License
 
