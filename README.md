@@ -44,6 +44,23 @@ Sellers can create new AI model listings by providing:
 Here you can see the Welcome page for our Marketplace, where you can login with your Metamask account as an user and also as an admin. When it's successfully connected you will see the dialog page which will redirect you to your marketplace.
 ![Описание изображения](screens/2.jpg)
 In More Details page you can see the more detailed information (name, description, price,rating, file) about your AI Models.
+
+## Conclusion
+
+The **AI Model Marketplace** successfully integrates **blockchain technology** with a decentralized platform, allowing users to **buy and sell AI models using ERC-20 tokens**. By implementing **wallet authentication, token transactions, and secure AI model storage**, this marketplace ensures a seamless and secure experience for both buyers and sellers.
+
+Key takeaways from this project:
+- **Decentralized transactions**: Users can securely trade AI models without intermediaries.
+- **ERC-20 token integration**: Transactions are powered by blockchain-based tokens.
+- **User-friendly interface**: Buyers can browse models easily, and sellers can list models with minimal effort.
+
+This marketplace demonstrates the potential of **blockchain in AI model trading**, making AI resources more accessible in a transparent and efficient manner. Future improvements could include **auction-based pricing, staking mechanisms, and governance features** to further enhance the platform.
+
+
+---
+
+This conclusion summarizes the project's goals, achievements, and possible improvements. Let me know if you’d like it tweaked! 😊
+
 ## License
 MIT License
 
