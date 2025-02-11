@@ -8,7 +8,7 @@
 1. [Overview](#overview)  
 2. [Prerequisites](#prerequisites)
 3. [Setup and installation](#setup-and-installation)
-4. [Smart Contract Functions](#smart-contract-functions)
+4. [ERC20 Token Implementation](#erc20-token-implementation)
 5. [Deployment](#deployment)
 6. [FrontEnd](#frontend)
 7. [Conclusion](#conclusion)
@@ -80,3 +80,93 @@ npm install
 ```bash
 node server.js
 ```
+
+## ERC20 Token Implementation
+
+### **1. Smart Contract Code**
+
+Create a file **`MyToken.sol`** in Remix and paste the following Solidity code:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract UniversityToken is ERC20 {
+    address public lastSender;
+    address public lastReceiver;
+    uint256 public lastTimestamp;
+
+    constructor() ERC20("Ulzhan_Nurgul", "UN") {
+        _mint(msg.sender, 2000 * 10**decimals());
+    }
+
+    function transfer(address recipient, uint256 amount) public override returns (bool) {
+        lastSender = msg.sender;
+        lastReceiver = recipient;
+        lastTimestamp = block.timestamp;
+        return super.transfer(recipient, amount);
+    }
+
+    function getLastTransactionTimestamp() public view returns (string memory) {
+        return _formatTimestamp(lastTimestamp);
+    }
+
+    function getLastSender() public view returns (address) {
+        return lastSender;
+    }
+
+    function getLastReceiver() public view returns (address) {
+        return lastReceiver;
+    }
+
+    function _formatTimestamp(uint256 timestamp) internal pure returns (string memory) {
+        uint256 SECONDS_PER_DAY = 86400;
+        uint16 ORIGIN_YEAR = 1970;
+
+        uint256 daysSinceEpoch = timestamp / SECONDS_PER_DAY;
+        uint16 year = ORIGIN_YEAR;
+        uint256 leapYears = (daysSinceEpoch + 1) / 1461; // Approximate leap year count
+        year += uint16((daysSinceEpoch - leapYears) / 365);
+
+        return uintToString(year);
+    }
+}
+
+```
+
+### **2. Compile the Contract**
+
+- Open **Remix IDE** → Select Solidity version **0.8.20**.
+- Click **Compile MyToken.sol**.
+
+### **3. Deploy the Contract**
+
+- Go to **Deploy & Run Transactions**.
+- Select **Injected Provider - MetaMask** (for Sepolia) or **Ganache Provider**.
+- Click **Deploy** and confirm the transaction in MetaMask.
+
+![Описание изображения](screens/transact.png)
+
+### **4. Interacting with the Contract**
+
+After deploying, use Remix to interact with the contract:
+
+#### **Check Token Balance**
+
+```solidity
+balanceOf("your_address")
+```
+
+#### **Transfer Tokens**
+
+```solidity
+transfer("receiver_address", amount)
+```
+
+#### **Retrieve Transaction Details**
+
+- **Last Transaction Timestamp:** `getLastTransactionTimestamp()`
+- **Last Sender Address:** `getLastSender()`
+- **Last Receiver Address:** `getLastReceiver()`
