@@ -98,7 +98,6 @@ Create a file **`MyToken.sol`** in Remix and creating a smart contract.
 - Select **Injected Provider - MetaMask** (for Sepolia) or **Ganache Provider**.
 - Click **Deploy** and confirm the transaction in MetaMask.
 
-![Описание изображения](screens/transact.png)
 
 ### **4. Interacting with the Contract**
 
